@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soujanya Veginati | Full Stack Developer</title>
+  <meta name="description" content="Soujanya Veginati is a Full Stack Developer specializing in modern web applications, e-commerce platforms, API integrations and responsive user experiences.">
+  <meta name="author" content="Soujanya Veginati">
+  <meta name="keywords" content="Full Stack Developer, Web Development, E-Commerce, React, PHP, Hyderabad">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Soujanya Veginati | Full Stack Developer">
+  <meta property="og:description" content="Full Stack Developer specializing in modern web applications, e-commerce platforms, API integrations and responsive user experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>S</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body>
+  <!-- Custom Cursor (desktop) -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- Background Effects -->
+  <div class="bg-effects" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+    <canvas id="particleCanvas"></canvas>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#home">SOUJANYA<span>.V</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon-custom">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-accent btn-sm d-none d-lg-inline-flex">Let's Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center hero-row py-3">
+        <div class="col-lg-6 hero-content reveal">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            FULL STACK DEVELOPER
+          </div>
+          <h1 class="hero-title">
+            Building <span class="gradient-text">Digital Experiences</span> That Perform.
+          </h1>
+          <p class="hero-desc">
+            Full Stack Developer experienced in building responsive web applications, e-commerce platforms, CMS solutions, REST API integrations, payment gateways, logistics integrations and scalable digital products.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-accent">View My Work</a>
+            <a href="#contact" class="btn btn-outline-glow">Let's Connect</a>
+            <!-- Resume: add href when file is ready
+            <a href="#" class="btn btn-link-resume" id="resumeLink" download>
+              <i class="bi bi-download"></i> Download Resume
+            </a>
+            -->
+          </div>
+        </div>
+        <div class="col-lg-6 hero-3d-wrap">
+          <div id="hero3d" class="hero-3d-canvas" aria-label="Interactive 3D technology visualization"></div>
+          <div class="hero-3d-fallback" id="hero3dFallback" aria-hidden="true">
+            <div class="fallback-orb"></div>
+            <div class="fallback-labels">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span>
+              <span>TypeScript</span><span>PHP</span><span>Spring Boot</span><span>MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Stats -->
+      <div class="hero-stats row g-3 reveal">
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-value" data-count="2" data-suffix="+">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-value stat-text">Full Stack</div>
+            <div class="stat-label">Development</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-value stat-text">Web Apps</div>
+            <div class="stat-label">Development</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-value stat-text">E-Commerce</div>
+            <div class="stat-label">Development</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="section-pad">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">Who I Am</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Building products from interface to implementation.</p>
+      </div>
+      <div class="row align-items-center g-3 g-lg-4">
+        <div class="col-lg-6 reveal-left">
+          <div class="about-content">
+            <p>
+              I am a Full Stack Developer with experience in designing and developing responsive web applications, e-commerce platforms, CMS solutions and API-driven systems.
+            </p>
+            <p>
+              My experience includes frontend development, backend integration, database-driven applications, payment gateway integration, logistics integration, communication APIs, deployment and application maintenance.
+            </p>
+            <div class="about-highlights">
+              <div class="highlight-item"><i class="bi bi-check-circle-fill"></i> Responsive Web Apps</div>
+              <div class="highlight-item"><i class="bi bi-check-circle-fill"></i> E-Commerce Platforms</div>
+              <div class="highlight-item"><i class="bi bi-check-circle-fill"></i> API Integrations</div>
+              <div class="highlight-item"><i class="bi bi-check-circle-fill"></i> UI Development</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 reveal-right">
+          <div class="profile-card tilt-card">
+            <div class="profile-avatar" aria-hidden="true">
+              <div class="avatar-graphic">
+                <i class="bi bi-code-slash"></i>
+                <div class="avatar-rings">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+            <h3 class="profile-name">Soujanya Veginati</h3>
+            <p class="profile-role">Full Stack Developer</p>
+            <p class="profile-location"><i class="bi bi-geo-alt"></i> Hyderabad, India</p>
+            <div class="profile-focus">
+              <span class="focus-label">Focus</span>
+              <div class="focus-tags">
+                <span>Web Applications</span>
+                <span>E-Commerce</span>
+                <span>API Integration</span>
+                <span>UI Development</span>
+                <span>CMS Solutions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" class="section-pad section-alt">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">Capabilities</span>
+        <h2 class="section-title">Technology Stack</h2>
+        <p class="section-subtitle">Organized by layer — from interface to integrations.</p>
+      </div>
+
+      <div class="skills-board">
+        <article class="skill-panel reveal">
+          <div class="skill-panel-head">
+            <span class="skill-panel-num">01</span>
+            <div class="skill-panel-label">
+              <i class="bi bi-layout-text-window-reverse"></i>
+              <div>
+                <h3>Frontend</h3>
+                <p>UI & client-side</p>
+              </div>
+            </div>
+          </div>
+          <div class="skill-panel-tags">
+            <span><i class="bi bi-filetype-html"></i> HTML5</span>
+            <span><i class="bi bi-filetype-css"></i> CSS3</span>
+            <span><i class="bi bi-filetype-js"></i> JavaScript</span>
+            <span><i class="bi bi-code-square"></i> TypeScript</span>
+            <span><i class="bi bi-diagram-3"></i> AngularJS</span>
+            <span><i class="bi bi-lightning"></i> jQuery</span>
+            <span><i class="bi bi-boxes"></i> React.js</span>
+            <span><i class="bi bi-bootstrap"></i> Bootstrap</span>
+          </div>
+        </article>
+
+        <article class="skill-panel reveal">
+          <div class="skill-panel-head">
+            <span class="skill-panel-num">02</span>
+            <div class="skill-panel-label">
+              <i class="bi bi-server"></i>
+              <div>
+                <h3>Backend</h3>
+                <p>Server & APIs</p>
+              </div>
+            </div>
+          </div>
+          <div class="skill-panel-tags">
+            <span><i class="bi bi-filetype-php"></i> PHP</span>
+            <span><i class="bi bi-gear-wide-connected"></i> Spring Boot</span>
+            <span><i class="bi bi-hdd-network"></i> REST APIs</span>
+          </div>
+        </article>
+
+        <article class="skill-panel reveal">
+          <div class="skill-panel-head">
+            <span class="skill-panel-num">03</span>
+            <div class="skill-panel-label">
+              <i class="bi bi-wordpress"></i>
+              <div>
+                <h3>CMS</h3>
+                <p>Content platforms</p>
+              </div>
+            </div>
+          </div>
+          <div class="skill-panel-tags">
+            <span><i class="bi bi-wordpress"></i> WordPress</span>
+          </div>
+        </article>
+
+        <article class="skill-panel reveal">
+          <div class="skill-panel-head">
+            <span class="skill-panel-num">04</span>
+            <div class="skill-panel-label">
+              <i class="bi bi-database"></i>
+              <div>
+                <h3>Database</h3>
+                <p>Data storage</p>
+              </div>
+            </div>
+          </div>
+          <div class="skill-panel-tags">
+            <span><i class="bi bi-table"></i> SQL</span>
+            <span><i class="bi bi-database-fill"></i> MySQL</span>
+          </div>
+        </article>
+
+        <article class="skill-panel reveal">
+          <div class="skill-panel-head">
+            <span class="skill-panel-num">05</span>
+            <div class="skill-panel-label">
+              <i class="bi bi-tools"></i>
+              <div>
+                <h3>Tools</h3>
+                <p>Dev workflow</p>
+              </div>
+            </div>
+          </div>
+          <div class="skill-panel-tags">
+            <span><i class="bi bi-git"></i> Git</span>
+            <span><i class="bi bi-github"></i> GitHub</span>
+            <span><i class="bi bi-send"></i> Postman</span>
+          </div>
+        </article>
+
+        <article class="skill-panel reveal">
+          <div class="skill-panel-head">
+            <span class="skill-panel-num">06</span>
+            <div class="skill-panel-label">
+              <i class="bi bi-plug"></i>
+              <div>
+                <h3>Integrations</h3>
+                <p>Third-party services</p>
+              </div>
+            </div>
+          </div>
+          <div class="skill-panel-tags">
+            <span><i class="bi bi-credit-card"></i> Razorpay</span>
+            <span><i class="bi bi-truck"></i> Shiprocket</span>
+            <span><i class="bi bi-envelope-at"></i> SendGrid</span>
+            <span><i class="bi bi-chat-dots"></i> Twilio</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section id="experience" class="section-pad">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">Career</span>
+        <h2 class="section-title">Professional Journey</h2>
+        <p class="section-subtitle">Roles and responsibilities across my career.</p>
+      </div>
+
+      <div class="timeline" id="timeline">
+        <div class="timeline-line" id="timelineLine"></div>
+
+        <!-- Flint & Thread - Present -->
+        <div class="timeline-item reveal-right">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">Aug 2025 – Present</div>
+          <div class="timeline-card tilt-card">
+            <div class="timeline-company">Flint & Thread India Pvt Ltd</div>
+            <div class="timeline-role">Full Stack Developer</div>
+            <ul class="timeline-points">
+              <li>Developing e-commerce web and mobile applications.</li>
+              <li>Building responsive applications using React.js, JavaScript, TypeScript, jQuery, HTML5, CSS3 and PHP.</li>
+              <li>Supporting Google Play Store releases, application deployments and version updates.</li>
+              <li>Integrating payment gateways, logistics, shipping and communication APIs.</li>
+              <li>Optimizing UI performance and user experience across platforms.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>React.js</span><span>TypeScript</span><span>PHP</span><span>E-Commerce</span><span>APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amalyte -->
+        <div class="timeline-item reveal-left">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">Jun 2025 – Aug 2025</div>
+          <div class="timeline-card tilt-card">
+            <div class="timeline-company">Amalyte Solutions</div>
+            <div class="timeline-role">Full Stack & WordPress Developer</div>
+            <ul class="timeline-points">
+              <li>Worked on website development projects.</li>
+              <li>Developed applications using PHP, JavaScript, HTML5 and CSS3.</li>
+              <li>Customized WordPress solutions.</li>
+              <li>Managed hosting, SSL and domains.</li>
+              <li>Worked closely with clients to deliver scalable business applications.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>PHP</span><span>WordPress</span><span>JavaScript</span><span>HTML5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ultra Key -->
+        <div class="timeline-item reveal-right">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">Nov 2023 – Jun 2025</div>
+          <div class="timeline-card tilt-card">
+            <div class="timeline-company">Ultra Key IT Solutions</div>
+            <div class="timeline-role">Full Stack Developer</div>
+            <ul class="timeline-points">
+              <li>Developed responsive web applications using HTML5, CSS3, JavaScript, PHP and SQL.</li>
+              <li>Built reusable UI components.</li>
+              <li>Integrated REST APIs.</li>
+              <li>Optimized application performance and user experience.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span><span>SQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" class="section-pad section-alt">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">Portfolio</span>
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="section-subtitle">Real-world applications and platforms I've worked on.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Project 01 — Way2Web -->
+        <div class="col-lg-6 reveal">
+          <article class="project-card tilt-card"
+            data-title="Way2Web E-Commerce Platform"
+            data-category="E-Commerce Platform"
+            data-desc="An e-commerce platform focused on responsive shopping experiences, product management and online payment integration."
+            data-tech="HTML5, CSS3, JavaScript, PHP, SQL, Razorpay"
+            data-features="Responsive UI, Product management, Database integration, Online payment integration"
+            data-link="#"
+            data-github="https://github.com/Soujanya809"
+            data-demo="#">
+            <div class="project-preview">
+              <div class="project-visual visual-ecommerce">
+                <div class="visual-glow"></div>
+                <div class="visual-icon"><i class="bi bi-cart3"></i></div>
+                <div class="visual-meta">
+                  <span class="visual-tag">E-Commerce</span>
+                  <strong>Way2Web</strong>
+                  <em>Shopping • Payments • Catalog</em>
+                </div>
+                <div class="visual-chips">
+                  <span>PHP</span><span>Razorpay</span><span>SQL</span>
+                </div>
+              </div>
+              <div class="project-glow"></div>
+            </div>
+            <div class="project-body">
+              <span class="project-category">E-Commerce Platform</span>
+              <h3 class="project-title">Way2Web E-Commerce Platform</h3>
+              <p class="project-desc">An e-commerce platform focused on responsive shopping experiences, product management and online payment integration.</p>
+              <div class="project-tech">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span><span>SQL</span><span>Razorpay</span>
+              </div>
+              <ul class="project-features">
+                <li>Responsive UI</li>
+                <li>Product management</li>
+                <li>Database integration</li>
+                <li>Online payment integration</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/Soujanya809" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Project 02 — Flint & Thread -->
+        <div class="col-lg-6 reveal">
+          <article class="project-card tilt-card"
+            data-title="Flint & Thread Platform"
+            data-category="E-Commerce • Web • Mobile"
+            data-desc="A multi-functional e-commerce ecosystem involving customer-facing applications, seller functionality, administrative modules and backend API integrations."
+            data-tech="TypeScript, React.js, API Integration, E-Commerce Modules"
+            data-features="E-commerce modules, Product management, Seller workflows, Payment integration, Logistics integration, API integrations, Web and mobile application support"
+            data-link="#"
+            data-github="https://github.com/Soujanya809"
+            data-demo="#">
+            <div class="project-preview">
+              <div class="project-visual visual-flint">
+                <div class="visual-glow"></div>
+                <div class="visual-devices" aria-hidden="true">
+                  <div class="viz-desktop"><i class="bi bi-display"></i></div>
+                  <div class="viz-mobile"><i class="bi bi-phone"></i></div>
+                  <div class="viz-admin"><i class="bi bi-gear"></i></div>
+                </div>
+                <div class="visual-meta">
+                  <span class="visual-tag">Web • Mobile • Admin</span>
+                  <strong>Flint & Thread</strong>
+                  <em>Multi-platform commerce ecosystem</em>
+                </div>
+                <div class="visual-chips">
+                  <span>React</span><span>TypeScript</span><span>APIs</span>
+                </div>
+              </div>
+              <div class="project-glow"></div>
+            </div>
+            <div class="project-body">
+              <span class="project-category">E-Commerce • Web • Mobile</span>
+              <h3 class="project-title">Flint & Thread Platform</h3>
+              <p class="project-desc">A multi-functional e-commerce ecosystem involving customer-facing applications, seller functionality, administrative modules and backend API integrations.</p>
+              <div class="project-tech">
+                <span>TypeScript</span><span>React.js</span><span>API Integration</span><span>E-Commerce</span>
+              </div>
+              <ul class="project-features">
+                <li>E-commerce modules</li>
+                <li>Seller workflows</li>
+                <li>Payment & logistics integration</li>
+                <li>Web and mobile support</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://github.com/Soujanya809" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Project 03 — School Management -->
+        <div class="col-lg-4 reveal">
+          <article class="project-card tilt-card"
+            data-title="School Management System"
+            data-category="Education Management"
+            data-desc="A web-based school management solution designed to manage application data and streamline educational workflows."
+            data-tech="PHP, SQL, HTML5, CSS3"
+            data-features="Student data management, Administrative workflows, Database-driven modules, Responsive interface"
+            data-link="#"
+            data-github="https://github.com/Soujanya809"
+            data-demo="#">
+            <div class="project-preview">
+              <div class="project-visual visual-education">
+                <div class="visual-glow"></div>
+                <div class="visual-icon"><i class="bi bi-mortarboard"></i></div>
+                <div class="visual-meta">
+                  <span class="visual-tag">Education</span>
+                  <strong>School Management</strong>
+                  <em>Students • Admin • Workflows</em>
+                </div>
+                <div class="visual-chips">
+                  <span>PHP</span><span>SQL</span>
+                </div>
+              </div>
+              <div class="project-glow"></div>
+            </div>
+            <div class="project-body">
+              <span class="project-category">Education Management</span>
+              <h3 class="project-title">School Management System</h3>
+              <p class="project-desc">A web-based school management solution designed to manage application data and streamline educational workflows.</p>
+              <div class="project-tech">
+                <span>PHP</span><span>SQL</span><span>HTML5</span><span>CSS3</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Soujanya809" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Project 04 — Medicalist -->
+        <div class="col-lg-4 reveal">
+          <article class="project-card tilt-card"
+            data-title="Medicalist"
+            data-category="Healthcare Web Application"
+            data-desc="A responsive web application with database-driven functionality and user-focused interface design."
+            data-tech="HTML5, CSS3, JavaScript, Database Integration"
+            data-features="Responsive UI, Database-driven features, Healthcare-focused design, User workflows"
+            data-link="#"
+            data-github="https://github.com/Soujanya809"
+            data-demo="#">
+            <div class="project-preview">
+              <div class="project-visual visual-health">
+                <div class="visual-glow"></div>
+                <div class="visual-icon"><i class="bi bi-heart-pulse"></i></div>
+                <div class="visual-meta">
+                  <span class="visual-tag">Healthcare</span>
+                  <strong>Medicalist</strong>
+                  <em>Care workflows • Records</em>
+                </div>
+                <div class="visual-chips">
+                  <span>JS</span><span>Database</span>
+                </div>
+              </div>
+              <div class="project-glow"></div>
+            </div>
+            <div class="project-body">
+              <span class="project-category">Healthcare Web Application</span>
+              <h3 class="project-title">Medicalist</h3>
+              <p class="project-desc">A responsive web application with database-driven functionality and user-focused interface design.</p>
+              <div class="project-tech">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Database</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Soujanya809" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Project 05 — Ultrakey Matrimony -->
+        <div class="col-lg-4 reveal">
+          <article class="project-card tilt-card"
+            data-title="Ultrakey Matrimony"
+            data-category="Matrimony Platform"
+            data-desc="A matrimony platform focused on authentication, profile management and user data workflows."
+            data-tech="PHP, Authentication, Profile Management, Database"
+            data-features="User authentication, Profile management, Search & discovery, Database workflows"
+            data-link="#"
+            data-github="https://github.com/Soujanya809"
+            data-demo="#">
+            <div class="project-preview">
+              <div class="project-visual visual-matrimony">
+                <div class="visual-glow"></div>
+                <div class="visual-icon"><i class="bi bi-people"></i></div>
+                <div class="visual-meta">
+                  <span class="visual-tag">Matrimony</span>
+                  <strong>Ultrakey Matrimony</strong>
+                  <em>Profiles • Auth • Discovery</em>
+                </div>
+                <div class="visual-chips">
+                  <span>PHP</span><span>Auth</span>
+                </div>
+              </div>
+              <div class="project-glow"></div>
+            </div>
+            <div class="project-body">
+              <span class="project-category">Matrimony Platform</span>
+              <h3 class="project-title">Ultrakey Matrimony</h3>
+              <p class="project-desc">A matrimony platform focused on authentication, profile management and user data workflows.</p>
+              <div class="project-tech">
+                <span>PHP</span><span>Auth</span><span>Profiles</span><span>Database</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Soujanya809" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modal -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content project-modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="projectModalTitle"></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-preview" id="projectModalPreview"></div>
+          <span class="project-category" id="projectModalCategory"></span>
+          <p id="projectModalDesc"></p>
+          <h6>Technologies</h6>
+          <div class="project-tech" id="projectModalTech"></div>
+          <h6 class="mt-3">Key Features</h6>
+          <ul id="projectModalFeatures"></ul>
+          <div class="project-actions mt-4">
+            <a href="https://github.com/Soujanya809" target="_blank" rel="noopener noreferrer" class="btn btn-outline-glow btn-sm" id="projectModalGithub"><i class="bi bi-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ARCHITECTURE ========== -->
+  <section id="architecture" class="section-pad">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">Stack Flow</span>
+        <h2 class="section-title">From Interface to Database</h2>
+        <p class="section-subtitle">How frontend, APIs, backend and data connect in the applications I build.</p>
+      </div>
+
+      <div class="arch-flow reveal">
+        <div class="arch-layer" data-layer="frontend">
+          <div class="arch-node">
+            <i class="bi bi-display"></i>
+            <strong>FRONTEND</strong>
+            <span>HTML / CSS / JS / React</span>
+          </div>
+        </div>
+        <div class="arch-connector">
+          <div class="arch-line"><span class="data-pulse"></span></div>
+          <span class="arch-arrow">↓</span>
+        </div>
+        <div class="arch-layer" data-layer="api">
+          <div class="arch-node arch-node-accent">
+            <i class="bi bi-arrows-angle-contract"></i>
+            <strong>REST API</strong>
+            <span>Request / Response</span>
+          </div>
+        </div>
+        <div class="arch-connector">
+          <div class="arch-line"><span class="data-pulse"></span></div>
+          <span class="arch-arrow">↓</span>
+        </div>
+        <div class="arch-layer" data-layer="backend">
+          <div class="arch-node">
+            <i class="bi bi-server"></i>
+            <strong>BACKEND</strong>
+            <span>PHP / Spring Boot</span>
+          </div>
+        </div>
+        <div class="arch-connector">
+          <div class="arch-line"><span class="data-pulse"></span></div>
+          <span class="arch-arrow">↓</span>
+        </div>
+        <div class="arch-layer" data-layer="database">
+          <div class="arch-node">
+            <i class="bi bi-database"></i>
+            <strong>DATABASE</strong>
+            <span>SQL / MySQL</span>
+          </div>
+        </div>
+
+        <div class="arch-integrations">
+          <div class="arch-int-item"><i class="bi bi-credit-card"></i> Razorpay</div>
+          <div class="arch-int-item"><i class="bi bi-truck"></i> Shiprocket</div>
+          <div class="arch-int-item"><i class="bi bi-envelope-at"></i> SendGrid</div>
+          <div class="arch-int-item"><i class="bi bi-chat-dots"></i> Twilio</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section id="process" class="section-pad section-alt">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">Workflow</span>
+        <h2 class="section-title">How I Build</h2>
+        <p class="section-subtitle">A clear process from requirements to production.</p>
+      </div>
+      <div class="row g-4 process-grid">
+        <div class="col-6 col-md-4 col-lg-2 reveal scale-reveal">
+          <div class="process-step">
+            <div class="process-num">01</div>
+            <h4>Understand</h4>
+            <p>Requirements & Goals</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal scale-reveal">
+          <div class="process-step">
+            <div class="process-num">02</div>
+            <h4>Design</h4>
+            <p>UI & Architecture</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal scale-reveal">
+          <div class="process-step">
+            <div class="process-num">03</div>
+            <h4>Develop</h4>
+            <p>Frontend & Backend</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal scale-reveal">
+          <div class="process-step">
+            <div class="process-num">04</div>
+            <h4>Integrate</h4>
+            <p>APIs & Services</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal scale-reveal">
+          <div class="process-step">
+            <div class="process-num">05</div>
+            <h4>Test</h4>
+            <p>Performance & Reliability</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal scale-reveal">
+          <div class="process-step">
+            <div class="process-num">06</div>
+            <h4>Deploy</h4>
+            <p>Production & Maintenance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INTEGRATIONS NETWORK ========== -->
+  <section id="integrations" class="section-pad">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">Connected Systems</span>
+        <h2 class="section-title">Integrations & APIs</h2>
+        <p class="section-subtitle">Services wired into real application workflows.</p>
+      </div>
+
+      <div class="integration-network reveal">
+        <svg class="integration-svg" viewBox="0 0 800 400" aria-hidden="true">
+          <defs>
+            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00E5C0" stop-opacity="0.1"/>
+              <stop offset="50%" stop-color="#00E5C0" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#3AA0FF" stop-opacity="0.1"/>
+            </linearGradient>
+          </defs>
+          <line class="net-line" x1="400" y1="200" x2="150" y2="80"></line>
+          <line class="net-line" x1="400" y1="200" x2="650" y2="80"></line>
+          <line class="net-line" x1="400" y1="200" x2="100" y2="220"></line>
+          <line class="net-line" x1="400" y1="200" x2="700" y2="220"></line>
+          <line class="net-line" x1="400" y1="200" x2="200" y2="340"></line>
+          <line class="net-line" x1="400" y1="200" x2="600" y2="340"></line>
+          <circle class="net-flow" r="4"><animateMotion dur="3s" repeatCount="indefinite" path="M400,200 L150,80"/></circle>
+          <circle class="net-flow" r="4"><animateMotion dur="3.5s" repeatCount="indefinite" path="M400,200 L650,80"/></circle>
+          <circle class="net-flow" r="4"><animateMotion dur="4s" repeatCount="indefinite" path="M400,200 L100,220"/></circle>
+          <circle class="net-flow" r="4"><animateMotion dur="3.2s" repeatCount="indefinite" path="M400,200 L700,220"/></circle>
+          <circle class="net-flow" r="4"><animateMotion dur="3.8s" repeatCount="indefinite" path="M400,200 L200,340"/></circle>
+          <circle class="net-flow" r="4"><animateMotion dur="4.2s" repeatCount="indefinite" path="M400,200 L600,340"/></circle>
+        </svg>
+        <div class="net-node net-center">
+          <i class="bi bi-cpu"></i>
+          <span>APPLICATION</span>
+        </div>
+        <div class="net-node net-n1"><i class="bi bi-credit-card"></i><span>Razorpay</span></div>
+        <div class="net-node net-n2"><i class="bi bi-truck"></i><span>Shiprocket</span></div>
+        <div class="net-node net-n3"><i class="bi bi-envelope-at"></i><span>SendGrid</span></div>
+        <div class="net-node net-n4"><i class="bi bi-chat-dots"></i><span>Twilio</span></div>
+        <div class="net-node net-n5"><i class="bi bi-hdd-network"></i><span>REST APIs</span></div>
+        <div class="net-node net-n6"><i class="bi bi-database"></i><span>Database</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATIONS ========== -->
+  <section id="certifications" class="section-pad">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">Credentials</span>
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-subtitle">Formal learning that supports practical delivery.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="cert-card tilt-card">
+            <div class="cert-icon"><i class="bi bi-award"></i></div>
+            <h4>Full Stack Developer Internship</h4>
+            <p>Hands-on full stack development training and practice.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="cert-card tilt-card">
+            <div class="cert-icon"><i class="bi bi-git"></i></div>
+            <h4>Git & GitHub Source Code Management</h4>
+            <p>Version control and collaborative development workflows.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="cert-card tilt-card">
+            <div class="cert-icon"><i class="bi bi-cloud"></i></div>
+            <h4>Salesforce Development</h4>
+            <p>Salesforce platform development fundamentals.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="cert-card tilt-card">
+            <div class="cert-icon"><i class="bi bi-filetype-py"></i></div>
+            <h4>IBM Python 101 for Data Science</h4>
+            <p>Python foundations for data science with IBM.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="cert-card tilt-card">
+            <div class="cert-icon"><i class="bi bi-bar-chart"></i></div>
+            <h4>IBM Python for Data Science</h4>
+            <p>Applied Python techniques for data science workflows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section id="education" class="section-pad section-alt">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-eyebrow">Academic</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="education-card reveal mx-auto">
+        <div class="edu-icon"><i class="bi bi-mortarboard"></i></div>
+        <div class="edu-content">
+          <!-- Editable education fields -->
+          <h3>Krishna Chaitanya Institute of Technologies and Sciences</h3>
+          <p class="edu-degree"><!-- e.g. B.Tech in Computer Science -->Degree / Program</p>
+          <p class="edu-year"><!-- e.g. 2019 – 2023 -->Year of Study</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="section-pad contact-section">
+    <div class="container">
+      <div class="contact-cta text-center reveal">
+        <h2 class="contact-heading">Have a Project in Mind?</h2>
+        <p class="contact-sub">Let's build something useful, scalable and impactful.</p>
+      </div>
+
+      <div class="row g-4 g-lg-5">
+        <div class="col-lg-5 reveal-left">
+          <div class="contact-info-cards">
+            <a href="mailto:soujanyaveginati8096@gmail.com" class="contact-info-card">
+              <div class="ci-icon"><i class="bi bi-envelope"></i></div>
+              <div>
+                <span class="ci-label">Email</span>
+                <strong>soujanyaveginati8096@gmail.com</strong>
+              </div>
+            </a>
+            <a href="tel:+918096701549" class="contact-info-card">
+              <div class="ci-icon"><i class="bi bi-telephone"></i></div>
+              <div>
+                <span class="ci-label">Phone</span>
+                <strong>+91 8096701549</strong>
+              </div>
+            </a>
+            <a href="https://wa.me/918096701549?text=Hi%20Soujanya%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20opportunity.%0A%0ALooking%20forward%20to%20connecting%20with%20you.%0A%0AThanks%21" class="contact-info-card" target="_blank" rel="noopener noreferrer">
+              <div class="ci-icon ci-whatsapp"><i class="bi bi-whatsapp"></i></div>
+              <div>
+                <span class="ci-label">WhatsApp</span>
+                <strong>Send a Message</strong>
+              </div>
+            </a>
+            <div class="contact-info-card">
+              <div class="ci-icon"><i class="bi bi-geo-alt"></i></div>
+              <div>
+                <span class="ci-label">Location</span>
+                <strong>Hyderabad, India</strong>
+              </div>
+            </div>
+          </div>
+          <div class="contact-cta-btns">
+            <a href="https://wa.me/918096701549?text=Hi%20Soujanya%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project%20opportunity.%0A%0ALooking%20forward%20to%20connecting%20with%20you.%0A%0AThanks%21" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" id="whatsappDirectBtn">
+              <i class="bi bi-whatsapp"></i> Send Message
+            </a>
+            <a href="mailto:soujanyaveginati8096@gmail.com" class="btn btn-accent">Send Email</a>
+            <a href="tel:+918096701549" class="btn btn-outline-glow">Call</a>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/Soujanya809" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/soujanya-v-67179033b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link"><i class="bi bi-linkedin"></i></a>
+            <!-- Add Instagram / X URLs when available
+            <a href="#" aria-label="Instagram" class="social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="X" class="social-link"><i class="bi bi-twitter-x"></i></a>
+            -->
+          </div>
+        </div>
+
+        <div class="col-lg-7 reveal-right">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="contactName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="contactName" name="name" required placeholder="Your name">
+              </div>
+              <div class="col-md-6">
+                <label for="contactEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="contactEmail" name="email" required placeholder="you@example.com">
+              </div>
+              <div class="col-12">
+                <label for="contactSubject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="contactSubject" name="subject" required placeholder="Project inquiry">
+              </div>
+              <div class="col-12">
+                <label for="contactMessage" class="form-label">Message</label>
+                <textarea class="form-control" id="contactMessage" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-whatsapp">
+                  <i class="bi bi-whatsapp"></i> Send Message on WhatsApp
+                </button>
+              </div>
+              <div class="col-12">
+                <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <strong>SOUJANYA VEGINATI</strong>
+          <span>Full Stack Developer</span>
+        </div>
+        <div class="social-links footer-social">
+          <a href="https://github.com/Soujanya809" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/soujanya-v-67179033b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        © 2026 Soujanya Veginati. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Main Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
